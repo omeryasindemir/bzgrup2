@@ -1,13 +1,324 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+:root{
+  --main:#6FC9F1;
+  --light: #B8E5F8;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+*{
+  font-family: "Wix Madefor Text", sans-serif;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+body{
+  min-height: 100vh;
+}
+
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  background-color: white;
+}
+
+.header-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;  
+  padding: 5px;
+  z-index: 999;
+}
+
+.header-top .logo{
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: -7px;
+  cursor: pointer;
+}
+
+.header-top .logo img{
+  height: 62px;
+}
+
+.header-top .search-bar{
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.header-top .search-bar input{
+  background-color: #f3f3f3;
+  border: none;
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+
+
+.header-top .search-bar i{
+ padding-left: 10px;
+ padding-right: 10px;
+ color: var(--main);
+ font-size: 20px;
+ cursor: pointer;
+}
+
+
+.header-top .search-bar input:focus{
+  border: 2px solid var(--main);
+}
+
+.header-top .auth-btn{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.header-top .auth-btn .ll{
+  position: absolute;
+  transition: all .25s ease-in-out;
+  opacity: 0;
+  background-image: linear-gradient(to bottom, #f3f3f3, lightgray);
+
+  padding: 5px;
+  border-radius: 5px 5px 5px 0px;
+  padding-left: 10px;
+  padding-right: 10px
+}
+
+.header-top .auth-btn:hover .ll{
+  margin-left: 50px;
+  opacity: 1;
+}
+
+.header-top .auth-btn i{
+  background-image: linear-gradient(to bottom, var(--light), var(--main));
+  padding: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.header-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.header-bottom li a{
+  color: black;
+  font-weight: 500;
+}
+
+.header-bottom li{
+  padding: 5px;
+  z-index: 999;
+}
+
+.header-bottom li:hover{
+  border-bottom: 2px solid var(--main);
+  margin-bottom: -3px;
+}
+
+.header-bottom li:hover a{
+  color: var(--main);
+}
+
+
+.slider{
+  height: calc(100vh - 104px);
+  width: 100%;
+  overflow: hidden;
+  margin-top: 104px;
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+* {
+  position: relative;
+}
+.iframely-embed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background: white;
+}
+
+body {
+  display: grid;
+}
+.title {
+  padding-left: 1em;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  font-family: "Prata", serif;
+  font-size: 8vw;
+  width: 100%;
+  z-index: 2;
+}
+.title > .title-inner {
+  display: inline-block;
+}
+@keyframes text-clip {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes outer-left {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes inner-left {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: none;
+  }
+}
+.cafe, .mozart {
+  animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+.title-inner {
+  display: inline-block;
+  animation: inner-left 1s 1s ease both;
+}
+.cafe-inner {
+  display: inline-block;
+  animation: inner-left 1s 1s ease both, text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+.mozart-inner {
+  animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+.title {
+  animation: outer-left 1s 1s ease both;
+}
+.cafe > .cafe-inner {
+  display: inline-block;
+}
+.mozart {
+  display: inline-block;
+}
+.image {
+  grid-row: 1;
+  grid-column: 2;
+  margin-left: -2rem;
+  opacity: 0.80;
+  animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
+  height: calc(100% + 69px);
+}
+@keyframes image-in {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+.image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+
+
+#app {
+  z-index: 10;
+}
+#app {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  padding-bottom: 4vmin;
+  height: 90vh;
+  width: 100%;
+  background-image: linear-gradient(to right, white, var(--light));
+  color: #3a3535;
+}
+
+
+
+
+
+
+
+
+
+button{
+  background-image: linear-gradient(to bottom, var(--light), var(--main));
+  border: none;
+  padding: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 875px) {
+  .header-bottom{
+    flex-direction: column;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .header-top{
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  header{
+    position: relative;
+  }
+
+  .slider{
+    margin-top: 0;
+  }
+
 }
