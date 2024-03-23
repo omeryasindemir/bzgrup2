@@ -14,10 +14,10 @@ const Slider = () => {
           <div class="title">
             <div class="title-inner">
               <div class="cafe">
-                <div class="cafe-inner">Title1</div>
+                <div class="cafe-inner">BZGRUP</div>
               </div>
               <div class="mozart">
-                <div class="mozart-inner">Title2 bla</div>
+                <div class="mozart-inner">Furniture</div>
               </div>
             </div>
           </div>
